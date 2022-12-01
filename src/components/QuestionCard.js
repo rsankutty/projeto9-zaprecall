@@ -23,7 +23,7 @@ export default function QuestionCard({
   const [icone, setIcone] = React.useState(seta_play);
   const [dataTestIcon, setDataTestIcon] = React.useState("play-btn");
 
-  function empty() {}
+  function empty() { }
 
   function abrirCartao() {
     setHideCard("None");
@@ -46,9 +46,8 @@ export default function QuestionCard({
   }
 
   return (
-    <>
+    <div data-test="flashcard" className="container-flashcard">
       <PerguntaFechada
-        data-test="flashcard"
         hideCard={hideCard}
         textDecoration={textDecoration}
         textColor={textColor}
@@ -61,7 +60,7 @@ export default function QuestionCard({
           alt="seta-virar"
         ></img>
       </PerguntaFechada>
-      <PerguntaAberta data-test="flashcard" showCard={showCard}>
+      <PerguntaAberta showCard={showCard}>
         <p data-test="flashcard-text">{question}</p>
         <img
           data-test="turn-btn"
@@ -70,7 +69,7 @@ export default function QuestionCard({
           alt="seta-virar"
         ></img>
       </PerguntaAberta>
-      <PerguntaFlipada data-test="flashcard" flipCard={flipCard}>
+      <PerguntaFlipada flipCard={flipCard}>
         <p data-test="flashcard-text">{answer}</p>
         <ContainerBotoes>
           <button
@@ -108,7 +107,7 @@ export default function QuestionCard({
           </button>
         </ContainerBotoes>
       </PerguntaFlipada>
-    </>
+    </div>
   );
 }
 
