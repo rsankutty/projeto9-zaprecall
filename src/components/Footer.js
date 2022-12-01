@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function  Footer() {
+export default function  Footer({contadorTarefas,numTarefas}) {
     return (
-        <FooterConcluidos>0/4 CONCLUÍDOS</FooterConcluidos>
+        <FooterConcluidos>{contadorTarefas}/{numTarefas} CONCLUÍDOS</FooterConcluidos>
     );
   }
 

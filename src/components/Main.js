@@ -1,13 +1,18 @@
 import logo from "../assets/img/logo.png";
 import styled from "styled-components";
 import cards from "./Cards";
+import React from 'react'
 
 import QuestionCard from "./QuestionCard";
 import OpenCard from "./OpenCard";
 import FlippedCard from "./FlippedCard";
 import Footer from "./Footer";
 
+
 export default function Main() {
+  const [contadorTarefas, setContadorTarefas] = React.useState(0) 
+  const numTarefas = cards.length
+
   return (
     <ScreenContainer>
       <LogoContainer>
@@ -27,7 +32,7 @@ export default function Main() {
         <FlippedCard key={index + 1} answer={item.answer} />
       ))}
 
-      <Footer />
+      <Footer contadorTarefas={contadorTarefas} numTarefas={numTarefas}/>
     </ScreenContainer>
   );
 }
