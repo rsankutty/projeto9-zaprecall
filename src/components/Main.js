@@ -24,6 +24,8 @@ export default function Main() {
           questionIndex={index + 1}
           question={item.question}
           answer={item.answer}
+          contadorTarefas={contadorTarefas}
+          setContadorTarefas={setContadorTarefas}
         />
       ))}
 
