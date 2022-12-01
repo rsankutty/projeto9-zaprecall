@@ -1,4 +1,4 @@
-import GlobalStyle from "../assets/css/globalStyles";
+import GlobalStyle from "../assets/style/globalStyles";
 import Main from "./Main";
 
 export default function App() {
