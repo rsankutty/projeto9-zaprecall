@@ -2,31 +2,35 @@ import logo from "../assets/img/logo.png";
 import seta_virar from "../assets/img/seta_virar.png";
 import seta_play from "../assets/img/seta_play.png";
 import styled from "styled-components";
+import GlobalStyle from "../assets/css/globalStyles";
 
 export default function App() {
   return (
-    <ScreenContainer>
-      <LogoContainer>
-        <img src={logo} alt="logo"></img>
-        <h1>ZapRecall</h1>
-      </LogoContainer>
-      <PerguntaFechada>
-        <p>teste</p>
-        <img src={seta_play} alt="seta-virar"></img>
-      </PerguntaFechada>
-      <PerguntaAberta>
-        <img src={seta_virar} alt="seta-virar"></img>
-      </PerguntaAberta>
-      <PerguntaAberta>
-        um monte de bosta
-        <ContainerBotoes>
-          <button>teste</button>
-          <button>merda</button>
-          <button>bosta fadfa </button>
-        </ContainerBotoes>
-      </PerguntaAberta>
-      <FooterConcluidos>um monte de bosta</FooterConcluidos>
-    </ScreenContainer>
+    <>
+      <GlobalStyle />
+      <ScreenContainer>
+        <LogoContainer>
+          <img src={logo} alt="logo"></img>
+          <h1>ZapRecall</h1>
+        </LogoContainer>
+        <PerguntaFechada>
+          <p>teste</p>
+          <img src={seta_play} alt="seta-virar"></img>
+        </PerguntaFechada>
+        <PerguntaAberta>
+          <img src={seta_virar} alt="seta-virar"></img>
+        </PerguntaAberta>
+        <PerguntaAberta>
+          um monte de bosta
+          <ContainerBotoes>
+            <button>teste</button>
+            <button>merda</button>
+            <button>bosta fadfa </button>
+          </ContainerBotoes>
+        </PerguntaAberta>
+        <FooterConcluidos>um monte de bosta</FooterConcluidos>
+      </ScreenContainer>
+    </>
   );
 }
 
