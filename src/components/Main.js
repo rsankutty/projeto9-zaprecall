@@ -1,17 +1,15 @@
 import logo from "../assets/img/logo.png";
 import styled from "styled-components";
 import cards from "./Cards";
-import React from 'react'
+import React from "react";
 
 import QuestionCard from "./QuestionCard";
-import OpenCard from "./OpenCard";
-import FlippedCard from "./FlippedCard";
 import Footer from "./Footer";
 
-
 export default function Main() {
-  const [contadorTarefas, setContadorTarefas] = React.useState(0) 
-  const numTarefas = cards.length
+  const [contadorTarefas, setContadorTarefas] = React.useState(0);
+
+  const numTarefas = cards.length;
 
   return (
     <ScreenContainer>
@@ -21,18 +19,15 @@ export default function Main() {
       </LogoContainer>
 
       {cards.map((item, index) => (
-        <QuestionCard key={index + 1} questionIndex={index + 1} />
+        <QuestionCard
+          key={index + 1}
+          questionIndex={index + 1}
+          question={item.question}
+          answer={item.answer}
+        />
       ))}
 
-      {cards.map((item, index) => (
-        <OpenCard key={index + 1} question={item.question} />
-      ))}
-
-      {cards.map((item, index) => (
-        <FlippedCard key={index + 1} answer={item.answer} />
-      ))}
-
-      <Footer contadorTarefas={contadorTarefas} numTarefas={numTarefas}/>
+      <Footer contadorTarefas={contadorTarefas} numTarefas={numTarefas} />
     </ScreenContainer>
   );
 }
@@ -66,5 +61,3 @@ const LogoContainer = styled.div`
     margin-left: 20px;
   }
 `;
-
-
