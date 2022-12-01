@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function  Footer({contadorTarefas,numTarefas}) {
     return (
-        <FooterConcluidos>{contadorTarefas}/{numTarefas} CONCLUÍDOS</FooterConcluidos>
+        <FooterConcluidos data-test="footer" >{contadorTarefas}/{numTarefas} CONCLUÍDOS</FooterConcluidos>
     );
   }
 

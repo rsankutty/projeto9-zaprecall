@@ -21,7 +21,8 @@ export default function QuestionCard({
   const [textColor, setTextColor] = React.useState("#333333");
   const [disable, setDisable] = React.useState(false);
   const [icone, setIcone] = React.useState(seta_play);
-  
+  const [dataTestIcon, setDataTestIcon] = React.useState("play-btn");
+
   function empty() {}
 
   function abrirCartao() {
@@ -47,51 +48,60 @@ export default function QuestionCard({
   return (
     <>
       <PerguntaFechada
+        data-test="flashcard"
         hideCard={hideCard}
         textDecoration={textDecoration}
         textColor={textColor}
       >
-        <p>Pergunta {questionIndex}</p>
+        <p data-test="flashcard-text">Pergunta {questionIndex}</p>
         <img
+          data-test={dataTestIcon}
           onClick={disable ? empty() : () => abrirCartao()}
           src={icone}
           alt="seta-virar"
         ></img>
       </PerguntaFechada>
       <PerguntaAberta showCard={showCard}>
-        {question}
+        <p data-test="flashcard-text">{question}</p>
         <img
+          data-test="turn-btn"
           onClick={() => fliparCartao()}
           src={seta_virar}
           alt="seta-virar"
         ></img>
       </PerguntaAberta>
       <PerguntaFlipada flipCard={flipCard}>
-        {answer}
+        <p data-test="flashcard-text">{answer}</p>
         <ContainerBotoes>
           <button
+            data-test="no-btn"
             onClick={() => {
               buttonClick();
               setIcone(icone_erro);
               setTextColor("#FF3030");
+              setDataTestIcon("no-icon");
             }}
           >
             Não lembrei
           </button>
           <button
+            data-test="partial-btn"
             onClick={() => {
               buttonClick();
               setIcone(icone_quase);
               setTextColor("#FF922E");
+              setDataTestIcon("partial-icon");
             }}
           >
             Quase não lembrei
           </button>
           <button
+            data-test="zap-btn"
             onClick={() => {
               buttonClick();
               setIcone(icone_certo);
               setTextColor("#2FBE34");
+              setDataTestIcon("zap-icon");
             }}
           >
             Zap!
@@ -132,12 +142,14 @@ const PerguntaAberta = styled.div`
   background: #ffffd5;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  font-family: "Recursive";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #333333;
+  p {
+    font-family: "Recursive";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+  }
   position: relative;
   display: ${(props) => props.showCard};
   flex-direction: column;
