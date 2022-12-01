@@ -61,7 +61,7 @@ export default function QuestionCard({
           alt="seta-virar"
         ></img>
       </PerguntaFechada>
-      <PerguntaAberta showCard={showCard}>
+      <PerguntaAberta data-test="flashcard" showCard={showCard}>
         <p data-test="flashcard-text">{question}</p>
         <img
           data-test="turn-btn"
@@ -70,7 +70,7 @@ export default function QuestionCard({
           alt="seta-virar"
         ></img>
       </PerguntaAberta>
-      <PerguntaFlipada flipCard={flipCard}>
+      <PerguntaFlipada data-test="flashcard" flipCard={flipCard}>
         <p data-test="flashcard-text">{answer}</p>
         <ContainerBotoes>
           <button
